@@ -1,5 +1,5 @@
-const questionBtn = document.querySelectorAll(".question-btn");
-const questionTexts = document.querySelectorAll(".question-text");
+// const questionBtn = document.querySelectorAll(".question-btn");
+// const questionTexts = document.querySelectorAll(".question-text");
 
 // questionBtn.forEach((btn, index) => {
 //   btn.addEventListener("click", () => {
@@ -20,17 +20,31 @@ const questionTexts = document.querySelectorAll(".question-text");
 //     qtn.classList.toggle("show-text");
 //   });
 // });
-const questions = document.querySelectorAll(".question");
+// const questions = document.querySelectorAll(".question");
 
-questions.forEach((btn) => {
-  const newBtn = btn.querySelector(".question-btn");
+// questions.forEach((btn) => {
+//   const newBtn = btn.querySelector(".question-btn");
 
-  newBtn.addEventListener("click", () => {
-    questions.forEach((item) => {
-      if (item !== btn) {
-        item.classList.remove("show-text");
+//   newBtn.addEventListener("click", () => {
+//     questions.forEach((item) => {
+//       if (item !== btn) {
+//         item.classList.remove("show-text");
+//       }
+//     });
+//     btn.classList.toggle("show-text");
+//   });
+// });
+
+const qutionBtn = document.querySelectorAll(".question-btn");
+const questionClass = document.querySelectorAll(".question");
+
+qutionBtn.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    questionClass.forEach((remove, i) => {
+      if (i != index) {
+        remove.classList.remove("show-text");
       }
     });
-    btn.classList.toggle("show-text");
+    questionClass[index].classList.toggle("show-text");
   });
 });
